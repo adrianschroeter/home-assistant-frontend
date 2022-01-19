@@ -25,7 +25,6 @@ Release:        0
 Summary:        Evil package
 License:        Apache License
 #!RemoteAssetUrl: git+https://github.com/home-assistant/home-assistant-polymer#20220118.0
-Source:         home-assistant-polymer-%{version}.tar.xz
 Patch1: workaround-mkdir-failure.patch
 BuildRequires:  npm16
 BuildRequires:  %{python_module devel}
@@ -45,7 +44,7 @@ WARNING: it is impossible to review the content of that package.
 
 
 %prep
-%setup -q -n home-assistant-polymer-%{version}
+%setup -q -n home-assistant-polymer -c -T
 # workaround parallel creating and removing build/ dir
 %patch1 -p1
 mkdir -p build/mdi
