@@ -1,0 +1,20 @@
+diff --git a/build-scripts/gulp/app.js b/build-scripts/gulp/app.js
+index 2959ad6a5..411562553 100644
+--- a/build-scripts/gulp/app.js
++++ b/build-scripts/gulp/app.js
+@@ -21,7 +21,6 @@ gulp.task(
+     async function setEnv() {
+       process.env.NODE_ENV = "development";
+     },
+-    "clean",
+     gulp.parallel(
+       "gen-service-worker-app-dev",
+       "gen-icons-json",
+@@ -45,7 +44,6 @@ gulp.task(
+     async function setEnv() {
+       process.env.NODE_ENV = "production";
+     },
+-    "clean",
+     gulp.parallel("gen-icons-json", "build-translations", "build-locale-data"),
+     "copy-static-app",
+     env.useRollup() ? "rollup-prod-app" : "webpack-prod-app",
